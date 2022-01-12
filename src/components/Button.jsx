@@ -4,7 +4,7 @@ const Button = ({content, setText}) => {
     const [counter, setCounter] = useState(0); 
     const [isLongPressed, setIsLongPressed] = useState(false);
     const timer = useRef(null)  
-    const longPressTimer = useRef(null)   
+    const longPressTimer = useRef(null)
 
     const handleLongClick = () => {
        setIsLongPressed(false); 
@@ -32,15 +32,17 @@ const Button = ({content, setText}) => {
             if(counter === content.symbols.length - 1) return 0;
             return prev + 1;       
         });
+
+        
         
     }
 
     return (
-        
+        <>
             <button  
             onMouseDown={handleLongClick}
             onMouseUp={handleCancelLongPress}
-            className='bg-zinc-900 flex flex-col items-center rounded w-24 p-2 text-white'> 
+            className="bg-zinc-900 focus:bg-red-600 flex flex-col items-center rounded w-24 p-2 text-white"> 
                 <p> {content.key} </p>
                 <p> 
                 {
@@ -53,6 +55,7 @@ const Button = ({content, setText}) => {
                 }   
                 </p>
             </button> 
+            </>
     )
 }
 
