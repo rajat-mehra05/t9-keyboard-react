@@ -12,7 +12,7 @@ function App() {
     <div className='flex justify-center items-center min-h-screen flex-col'>
       <InputField text={text} setText={setText} />
       <Keypad text={text} setText={setText} />
-      <DeleteButton setText={setText} />
+      <DeleteButton text={text} setText={setText} />
       <Footer />
     </div>
   );

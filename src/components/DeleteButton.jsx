@@ -1,6 +1,7 @@
 const DeleteButton = (props) => {
 
     const handleDelete = () => {
+        if(props.text === "") alert("Can't find any text to clear")
         props.setText((prev) =>  prev.slice(0,-1))
     }
 
